@@ -1,1 +1,2 @@
 regolo
+python-dotenv

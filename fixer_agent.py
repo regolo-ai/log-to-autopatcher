@@ -15,6 +15,10 @@ import re
 import sys
 
 import regolo
+from dotenv import load_dotenv
+
+# Load .env file at startup
+load_dotenv()
 
 
 # ---------------------------------------------------------------------------
