@@ -11,15 +11,13 @@ logging.basicConfig(
     ]
 )
 
+
 def process_payment(user_data):
     """
     Simulates a payment process.
     BUG: It assumes 'credit_card' and 'amount' always exist.
     """
     logging.info(f"Processing payment for user: {user_data.get('username')}...")
-    if 'credit_card' not in user_data:
-        logging.warning("Missing credit_card")
-        return False
 
     # THE BUG IS HERE: Direct access without checking key existence
     card = user_data['credit_card']
@@ -31,6 +29,7 @@ def process_payment(user_data):
     else:
         logging.warning("Amount is zero, skipping.")
         return False
+
 
 if __name__ == "__main__":
     # Simulating an API payload that lacks the 'credit_card' field
